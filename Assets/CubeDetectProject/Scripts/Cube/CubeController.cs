@@ -12,17 +12,18 @@ namespace Project1
         public UnityEvent AfterDetected;
         public void HighlightCube()
         {
-           StartCoroutine(HighlightCoroutine());
+           StartCoroutine(HighlightCoroutine());// Color Change Coroutine
         }
+        //Cube Highlight Coroutine
         private IEnumerator HighlightCoroutine()
         {
-            BeforeDetected?.Invoke();
+            BeforeDetected?.Invoke();// Invoke BeforeDetected Event
             meshRenderer.material = HighlightMaterial;
             TextObj.SetActive(true);
             yield return new WaitForSeconds(0.5f);
             meshRenderer.material = DefaultMaterial;
             TextObj.SetActive(false);
-            AfterDetected?.Invoke();
+            AfterDetected?.Invoke();// Invoke AfterDetected Event
         }
     }
 }

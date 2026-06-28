@@ -7,8 +7,9 @@ namespace Project1
         [SerializeField] private AudioClip[] audioClips;
         private void Awake()
         {
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);//Dont reload this object when scene change
         }
+        // Play sound effect based on the index
         public void PlaySound(int index)
         {
             if (index >= 0 && index < audioClips.Length)

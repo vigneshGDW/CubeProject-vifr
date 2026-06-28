@@ -8,7 +8,7 @@ namespace Project1
         [SerializeField] private LayerMask groundLayer;
         [SerializeField] private bool isJumping = true;
         [SerializeField] private bool isMoving = true;
-        [SerializeField] private float cubeDetectionRange = 2f;
+        [SerializeField] private float cubeDetectionRange = 2f;// Range for detecting cubes in front of the player
         [SerializeField] private GameManager gameManager;
         private Rigidbody rb;
         private bool isGrounded;
@@ -29,7 +29,7 @@ namespace Project1
                 CubeDedect();
             }
         }
-
+        //Player Movement Controls
         private void Move()
         {
             if (isMoving)
@@ -54,6 +54,7 @@ namespace Project1
                 }
             }
         }
+        //Cube Detection Logic
         private void CubeDedect()
         {
             RaycastHit hit;
